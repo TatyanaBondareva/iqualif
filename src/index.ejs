@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iqualif</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<% const currency = [
+    {title: 'Euro (EUR)', class: 'header__menu-link', value: 'EUR', link: '#'},
+    {title: 'Dollar (USD)', class: 'header__menu-link', value: 'USD', link: '#'},
+    {title: 'Rubble (RUB)', class: 'header__menu-link', value: 'RUB', link: '#'},
+    /* ... */
+]; %>
+<% const lang = [
+    {title: 'English', class: 'header__menu-link',  link: '#'},
+    {title: 'Russian', class: 'header__menu-link', link: '#'},
+    {title: 'Français', class: 'header__menu-link', link: '#'},
+    /* ... */
+]; %>
+<% const menuItems = [
+    {title: 'privacy policy', link: '#'},
+    {title: 'terms of use', link: '#'},
+    {title: 'contact us', link: '#'},
+    {title: 'newsletter', link: '#'},
+    {title: 'sitemap', link: '#'}
+    /* ... */
+]; %>
+<% const listItems = [
+    {
+        title: 'EXTRACTION',
+        img: 'img/icon_1.png',
+        description: 'Extraction of full contact details, addiesses and phone numtaers'
+    },
+    {
+        title: 'COORDINATION',
+        img: 'img/icon_2.png',
+        description: 'Coordinate the extraction of data from the white Pages directory'
+    },
+    {title: 'AUTOMATIC', img: 'img/icon_3.png', description: 'Automatic enhalicement of the street list'},
+    {title: 'STREETS', img: 'img/icon_4.png', description: 'Use the list of streets provided oi impoit more'},
+    {title: 'CONTROL', img: 'img/icon_5.png', description: 'Pause and resume downloads'},
+    {title: 'UPDATES', img: 'img/icon_6.png', description: 'Automatic updates'},
+    {title: 'ANTIBLACKLIST', img: 'img/icon_7.png', description: 'Antiolackllst system'},
+    {title: 'CSV', img: 'img/icon_8.png', description: 'Export to SCV'},
+    /* ... */
+]; %>
+<% const information = [
+    {title: 'Specials', link: '#'},
+    {title: 'New products', link: '#'},
+    {title: 'Best sellers', link: '#'},
+    {title: 'Our stores', link: '#'},
+    {title: 'Contact us', link: '#'},
+    {title: 'EULA', link: '#'},
+    {title: 'General Terms And Conditions', link: '#'},
+    {title: 'About', link: '#'},
+    {title: 'Sitemap', link: '#'}
+    /* ... */
+]; %>
+<% const account = [
+    {title: 'My orders', link: '#'},
+    {title: 'My credit slips', link: '#'},
+    {title: 'My addresses', link: '#'},
+    {title: 'My personal info', link: '#'},
+    {title: 'My vouchers', link: '#'},
+    /* ... */
+]; %>
+<header class="header">
+    <div class="header__menu-wrapper">
+        <div class="container container_header">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Contact us</a></li>
+                <li class="header__menu-item header__menu-item_sublist"><a
+                            class="header__menu-link header__menu-link_list js-header-menu-link-list js-header-menu-link-lang"
+                            href="#">English</a>
+                    <ul class="header__menu-sublist" style="display: none">
+                        <% lang.forEach((item) => { %>
+                            <li class="header__menu-sublist-item"><a href="#"
+                                                                     class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                                     data-lang="<%= item.title %>"><%= item.title %></a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </li>
+                <li class="header__menu-item header__menu-item_sublist"><a
+                            class="header__menu-link header__menu-link_list js-header-menu-link-list" href="#">Currency:
+                        <span class="js-header-menu-link-currency">EUR</span></a>
+                    <ul class="header__menu-sublist" style="display: none">
+                        <% currency.forEach((item) => { %>
+                            <li class="header__menu-sublist-item"><a href="#"
+                                                                     class="header__menu-sublist-link js-header-menu-sublist-link"
+                                                                     data-currency="<%= item.value %>"><%= item.title %></a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Sing in</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <a href="#" class="logo"></a>
+        <form class="search-form" name="search-form">
+            <input type="search" class="search-form__input" placeholder="Search">
+            <input type="submit" class="search-form__button" value="">
+        </form>
+        <div class="cart__wrapper">
+            <span class="cart__title">Cart</span>
+            <span class="cart__count">(empty)</span>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="main-menu">
+            <li class="main-menu__item">
+                <a href="#" class="main-menu__link">buy</a>
+            </li>
+            <li class="main-menu__item">
+                <a href="#" class="main-menu__link">title in the menu2</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="expactor">
+    <div class="expactor__products">
+        <div class="banner">
+            <div class="container container_top">
+                <div class="expactor__titles">
+                    <h2 class="expactor__title">iqualif cpe</h2>
+                    <div class="expactor__subtitle">The best solution among marketplaces!</div>
+                </div>
+                <div class="expactor__img"></div>
+                <div class="expactor__description-wrapper">
+                    <p class="expactor__description">IQUALIF CPE extracts 40% more contacts that our compration</p>
+                    <p class="expactor__description">A real advantages in terms of time and efficiency</p>
+                    <p class="expactor__description">IQUALIF is used to collect mass of targeted data from the White or
+                        Yellow pages directories</p>
+                </div>
+            </div>
+        </div>
+        <div class="expactor__product">
+            <div class="expactor__product-wrapper">
+                <div class="expactor__product-inner">
+                    <h4 class="expactor__product-title">White pages extractor</h4>
+                    <div class="expactor__product-text">
+                        <a href="#" class="expactor__product-link-line">free download</a>
+                        click here to extract <br> data about individuals in Canada
+                    </div>
+                    <a href="#" class="expactor__product-link">Download
+                        <span class="expactor__product-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="expactor__product_right">
+            <div class="expactor__product-wrapper">
+                <div class="expactor__product-inner expactor__product-inner-right">
+                    <h4 class="expactor__product-title">White pages extractor</h4>
+                    <div class="expactor__product-text">
+                        <a href="#" class="expactor__product-link-line">free download</a>
+                        click here to extract <br> data about individuals in Canada
+                    </div>
+                    <a href="#" class="expactor__product-link">Download
+                        <span class="expactor__product-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="expactor__content">
+        <div class="expactor__content-wrapper mobile">
+            
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container content__container">
+        <h3 class="content__title">features</h3>
+        <div class="content__decor-line"></div>
+        <ul class="content__list">
+            <% listItems.forEach((item) => { %>
+                <li class="content__item">
+                    <div class="content__item-inner">
+                        <img class="content__item-img" src="<%= item.img %>">
+                        <div class="content__item-name"><%= item.title %></div>
+                    </div>
+                    <div class="content__item-description"><%= item.description %></div>
+                </li>
+            <% }) %>
+
+        </ul>
+    </div>
+</div>
+<div class="expactor__products expactor__products_one-line">
+    <div class="banner banner_long">
+        <div class="banner__inner">
+            <h3 class="content__title">support</h3>
+            <div class="content__decor-line"></div>
+        </div>
+    </div>
+    <ul class="expactor__support-list">
+        <li class="expactor__support-item">
+            <img src="img/icon_9.png" class="expactor__support-item-logo">
+            <div class="expactor__support-item-description">Windows XP / Vista / 7 / 8 / 10, 32 or 64 bit</div>
+        </li>
+        <li class="expactor__support-item">
+            <img src="img/icon_10.png" class="expactor__support-item-logo">
+            <div class="expactor__support-item-description">Apple Mac OS X (10.5 or later, Leopard, Snow Mountain,
+                Mountain Lion, Lion, Mavericks, Yosemite, EI Capitan, Sierra or later)
+            </div>
+        </li>
+        <li class="expactor__support-item">
+            <img src="img/icon_9.png" class="expactor__support-item-logo">
+            <div class="expactor__support-item-description">Windows Server 2003 / 2008 R2 / 2012 R2, 32 or 64 bit</div>
+        </li>
+    </ul>
+</div>
+<div class="container__light-text">Java 6 or later required (include in the installer)</div>
+<div class="description">
+    <div class="container description__container">
+        <h3 class="content__title">description</h3>
+        <div class="content__decor-line"></div>
+        <div class="description__wrapper">
+            <div class="description__top">
+                <div class="description__part">
+                    <p class="description__text description__text_bold">Ideal for CALL CENTERS and CONTACT CENTERS</p>
+                    <p class="description__text description__text_bold">but also for traders, artisans and professionals
+                        who want to
+                        introduce or find new customers and expand their activity base,
+                        What is IQUALIF? IQUALIF is a tool for ohtainig the full details of
+                        city’s residents and can filter results by specific criteria</p>
+                    <p class="description__text">IQUALlF is usefull for all professionals and for lausiness such as call
+                        centers
+                        communications and advertising agencies all maixeting professionals and the
+                        oiivate or public sector that wish to expand their activities or make
+                        themselves known.</p>
+                    <p class="description__text">White scrapei versions extlact data from individual listings by title
+                        name
+                        address telephone numtaen aveiage age and collective or individual housing</p>
+                    <p class="description__text">Vellow extractors allow companies to extlact lists by name address
+                        telephone numpen fax, website and email address, where such information is
+                        available</p>
+                    <p class="description__text">This software is an essential tool to expand youi maixet prospects
+                        giving you
+                        the possibility to cieate customei ﬁlesu forms and qualiﬁcation files This
+                        software enalales you capture up to 40% more contacts than competitors and
+                        collect full contact details for prospective clients</p>
+                    <p class="description__text">IQUALlE specialises in capturing and extracting data from the Yellow oi
+                        White Pages of several countries. Web scraping oi data mining can also tie
+                        extended to other areas oi sites according to your lausiness needs</p>
+                </div>
+                <div class="description__part">
+                    <p class="description__text  description__text_bold">IQUALIF Contact page Extractor includes the
+                        following features:</p>
+                    <ul class="description__list">
+                        <li class="description__item">Fllidlrig contact information from the online versions of white
+                            Pages or
+                            Yellow Pages directories of countiies including France Belgium Switzerland Canada alid
+                            Polvnesla
+                        </li>
+                        <li class="description__item">Recovering complete contact infoimation » names addresses
+                            telephone
+                            numoeis email and company names etc.
+                        </li>
+                        <li class="description__item">From a custom list of streets loaded by user</li>
+                        <li class="description__item">From a list of streets provided</li>
+                        <li class="description__item">Intelligent management of internet Download free fiom download
+                            freeznig and other involuntaiv inteiruptions
+                        </li>
+                        <li class="description__item">Automatic error detection arid letdownloadihg tunctioriallti
+                            available
+                        </li>
+                        <li class="description__item">Automatic street list updates</li>
+                        <li class="description__item">Pause and resume downloads</li>
+                        <li class="description__item">Alit’icblﬂtkllsl Svstem</li>
+                        <li class="description__item">Export contacts to CSV</li>
+                        <li class="description__item">Versions availaplefol several countries</li>
+                        <li class="description__item">Automatic updates</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="description__bottom">
+                <p class="description__text description__text_bold">OUR STRENGTHS:</p>
+                <p class="description__text description__text_bold">new customers will always have up-to-date
+                    information captured from ofﬁcial directories in real time. In addition, our solutions allow for the
+                    extraction of up to 20,000 sheets per houra Our aim s to provide customers with powerfuii Tools,
+                    with a quality a step above those already on the market.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="expactor-wrap">
+    <div class="expactor__cont"></div>
+    <div class="expactor__prod">
+        <div class="banner banner_bottom">
+        </div>
+        <div class="expactor__product  expactor__product_left-bottom">
+            <div class="expactor__product-wrapper">
+                <div class="expactor__product-inner">
+                    <h4 class="expactor__product-title expactor__product-title_bottom">White pages extractor</h4>
+                    <div class="expactor__product-link-wrapper">
+                        <a href="#" class="expactor__product-link">Try for free
+                            <span class="expactor__product-icon"></span>
+                        </a>
+                        <a href="#" class="expactor__product-link expactor__product-link_bottom expactor__product-link">Buy
+                            <span class="expactor__product-icon expactor__product-icon_brown"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="expactor__product_right expactor__product_right-bottom">
+            <div class="expactor__product-wrapper">
+            <div class="expactor__product-inner expactor__product-inner_right">
+                <h4 class="expactor__product-title expactor__product-title_bottom">White pages extractor</h4>
+                <div class="expactor__product-link-wrapper">
+                    <a href="#" class="expactor__product-link">Try for free
+                        <span class="expactor__product-icon"></span>
+                    </a>
+                    <a href="#" class="expactor__product-link expactor__product-link_brown expactor__product-link_bottom">Buy
+                        <span class="expactor__product-icon expactor__product-icon_yellow"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+<div class="professionals">
+    <div class="container professionals__container">
+        <div class="professionals__text-wrapper">
+            <h4 class="professionals__title">Professionals:</h4>
+            <p class="professionals__text">In a continuous searcn for improvement IQUALlF has developed an offer that
+                allows you to increase your productivity and improve your revenue streams. Our solution is the ideal
+                entry point for increasing your customer prospect and conversation lates As a professional you need the
+                pest, at
+                short notice For this reason we have adapted lQUALlF CPE to suit your needs: a simple and functional
+                tool that will meet all of your requirements.
+                White France, Belgium and Switzerland white White 1,021 are now available the interface has been
+                optimised and refined to extract to obtain even.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer__newsletter">
+        <div class="container footer__newsletter-container">
+            <h4 class="footer__newsletter-title">Newsletter</h4>
+            <form class="footer__newsletter-form">
+                <input class="footer__newsletter-input" type="email" name="email" size="18"
+                       placeholder="Enter your e-mail">
+                <button type="submit" name="submitNewsletter" class="footer__newsletter-button"></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-links">
+        <div class="container footer-links__container">
+            <div class="footer-links__section">
+                <h4 class="footer-links__title">Categories</h4>
+                <ul class="footer-links__list">
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">Buy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links__section">
+                <h4 class="footer-links__title">Information</h4>
+                <ul class="footer-links__list">
+                    <% information.forEach((item) => { %>
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link"><%= item.title %></a>
+                    </li>
+                        <% }) %>
+                </ul>
+            </div>
+            <div class="footer-links__section">
+                <h4 class="footer-links__title">My account</h4>
+                <ul class="footer-links__list">
+                    <% account.forEach((item) => { %>
+                        <li class="footer-links__item">
+                            <a href="#" class="footer-links__link"><%= item.title %></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+    <div class="container copyright__container">
+        <a class="copyright__link" href="#" target="_blank"> © 2019 - Ecommerce software by Iqualif™ </a>
+    </div>
+    </div>
+</footer>
+
+<button class="help">
+    <span class="help__icon">
+        <svg width="20" height="20" viewBox="0 0 20 20"><title></title><g id="Layer_4"><path d="M11,12.3V13c0,0-1.8,0-2,0v-0.6c0-0.6,0.1-1.4,0.8-2.1c0.7-0.7,1.6-1.2,1.6-2.1c0-0.9-0.7-1.4-1.4-1.4 c-1.3,0-1.4,1.4-1.5,1.7H6.6C6.6,7.1,7.2,5,10,5c2.4,0,3.4,1.6,3.4,3C13.4,10.4,11,10.8,11,12.3z"></path><circle cx="10" cy="15" r="1"></circle><path d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2 M10,0C4.5,0,0,4.5,0,10s4.5,10,10,10s10-4.5,10-10S15.5,0,10,0 L10,0z"></path></g></svg>
+    </span>
+    <span class="help__text">Помощь</span>
+</button>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

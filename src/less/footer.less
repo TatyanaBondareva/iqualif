@@ -1,0 +1,157 @@
+.footer {
+	background-color: #333333;
+	padding-bottom: 35px;
+
+	&__newsletter {
+		display: flex;
+		justify-content: center;
+		background-color: rgb(63, 63, 63);
+	}
+
+	&__newsletter-container {
+		padding: 12px 0;
+
+		@media (max-width: 1152px) {
+			padding: 12px 20px;
+		}
+	}
+
+	&__newsletter-title {
+		font-size: 22px;
+		line-height: 25px;
+		color: #fff;
+		margin: 0px 15px 0 0;
+	}
+
+	&__newsletter-form {
+		border: 1px solid rgb(83, 83, 83);
+		padding: 2px 8px 2px 0;
+	}
+
+	&__newsletter-button {
+		text-align: center;
+		color: #908f8f;
+		background: none;
+		top: 5px;
+		border: none;
+		border-radius: 50%;
+		position: relative;
+		cursor: pointer;
+
+		&:hover {
+			color: #FFFFFF;
+		}
+
+		&:before {
+			content: "\f138";
+			font-family: "FontAwesome";
+			font-size: 28px;
+			line-height: 28px;
+		}
+	}
+
+	&__newsletter-input {
+		border: none;
+		color: #fff;
+		background-color: transparent;
+		outline: none;
+		padding-left: 13px;
+		width: 238px;
+		height: 38px;
+	}
+}
+
+.footer-links {
+	display: flex;
+	justify-content: center;
+
+	&__container {
+		padding-top: 28px;
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 27px;
+
+		@media (max-width: 1152px) {
+			padding: 28px 20px 0;
+		}
+	}
+
+	&__section {
+		margin-right: 122px;
+	}
+
+	&__title {
+		font: 600 18px/22px "Open Sans", sans-serif;
+		color: #fff;
+		margin-bottom: 10px;
+	}
+
+	&__list {
+		list-style: none;
+		padding: 0;
+	}
+
+	&__item {
+		max-width: 137px;
+		margin-bottom: 6px;
+	}
+
+	&__link {
+		font-weight: bold;
+		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+		color: #777777;
+		text-decoration: none;
+		font-size: 14px;
+
+		&:hover {
+			color: #FFFFFF;
+		}
+	}
+}
+
+.copyright {
+	display: flex;
+	justify-content: center;
+
+	@media (max-width: 1152px) {
+		padding: 0 20px;
+	}
+
+	&__container {
+		padding: 10px 0;
+		border-top: 1px solid #777777;
+	}
+
+	&__link {
+		text-decoration: none;
+		font-size: 13px;
+		color: #777777;
+	}
+}
+.container.footer-links__container {
+	align-items: flex-start;
+}
+
+.help {
+	position: fixed;
+	bottom: 10px;
+	right: 20px;
+	border: none;
+	background-color: #222222;
+	color: #FFFFFF;
+	fill: #FFFFFF;
+	padding: 14px 25px;
+	border-radius: 23px;
+	display: flex;
+	cursor: pointer;
+	outline: hidden;
+
+	&__icon {
+		margin-right: 6px;
+	}
+
+	&__text {
+		letter-spacing: .6px;
+		font-size: 1.07143rem;
+	}
+}
