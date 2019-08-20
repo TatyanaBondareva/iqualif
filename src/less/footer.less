@@ -26,6 +26,10 @@
 	&__newsletter-form {
 		border: 1px solid rgb(83, 83, 83);
 		padding: 2px 8px 2px 0;
+
+		@media (max-width: 375px) {
+			padding: 0;
+		}
 	}
 
 	&__newsletter-button {
@@ -58,6 +62,14 @@
 		padding-left: 13px;
 		width: 238px;
 		height: 38px;
+
+		@media (max-width: 414px) {
+			width: 150px;
+		}
+
+		@media (max-width: 360px) {
+			width: 95px;
+		}
 	}
 }
 
@@ -74,6 +86,10 @@
 		@media (max-width: 1152px) {
 			padding: 28px 20px 0;
 		}
+
+		@media (max-width: 720px) {
+			flex-direction: column;
+		}
 	}
 
 	&__section {
@@ -86,9 +102,19 @@
 		margin-bottom: 10px;
 	}
 
+	&__title-span {
+		@media (min-width: 769px) {
+			display: none;
+		}
+	}
+
 	&__list {
 		list-style: none;
 		padding: 0;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	&__item {
@@ -145,6 +171,7 @@
 	display: flex;
 	cursor: pointer;
 	outline: hidden;
+	z-index: 30;
 
 	&__icon {
 		margin-right: 6px;

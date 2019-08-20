@@ -21,7 +21,7 @@
     /* ... */
 ]; %>
 <% const lang = [
-    {title: 'English', class: 'header__menu-link',  link: '#'},
+    {title: 'English', class: 'header__menu-link', link: '#'},
     {title: 'Russian', class: 'header__menu-link', link: '#'},
     {title: 'Français', class: 'header__menu-link', link: '#'},
     /* ... */
@@ -106,7 +106,12 @@
             </ul>
         </div>
     </div>
-    <div class="container">
+    <div class="container header__container">
+        <ul class="mobile-menu" id="openMenu">
+            <% for(var i = 0; i < 3; i++) { %>
+                <li class="mobile-menu__item"></li>
+            <% } %>
+        </ul>
         <a href="#" class="logo"></a>
         <form class="search-form" name="search-form">
             <input type="search" class="search-form__input" placeholder="Search">
@@ -128,6 +133,43 @@
         </ul>
     </div>
 </header>
+<div class="mobile-list mobile-list_hiden" id="headerMobileMenu">
+    <div class="mobile-list__close-wrapper">
+        <button class="mobile-list__close" id="closeMenu"></button>
+    </div>
+    <ul class="mobile-list__wrapper">
+        <li class="mobile-list__item header__menu-item_sublist"><a
+                    class="list-link header__menu-link_list js-header-menu-link-list js-header-menu-link-lang"
+                    href="#">English</a>
+            <ul class="header__menu-sublist" style="display: none">
+                <% lang.forEach((item) => { %>
+                    <li class="header__menu-sublist-item"><a href="#"
+                                                             class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                             data-lang="<%= item.title %>"><%= item.title %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        </li>
+        <li class="mobile-list__item"><a class="list-link" href="#">Contact us</a></li>
+        <li class="mobile-list__item header__menu-item_sublist"><a
+                    class="list-link header__menu-link_list js-header-menu-link-list" href="#">Currency:
+                <span class="js-header-menu-link-currency">EUR</span></a>
+            <ul class="header__menu-sublist" style="display: none">
+                <% currency.forEach((item) => { %>
+                    <li class="header__menu-sublist-item"><a href="#"
+                                                             class="header__menu-sublist-link  js-header-menu-sublist-link"
+                                                             data-currency="<%= item.value %>"><%= item.title %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        </li>
+        <li class="mobile-list__item"><a class="list-link" href="#">Sing in</a></li>
+    </ul>
+    <ul class="mobile-list__wrapper">
+        <li class="mobile-list__item"><a class="list-link" href="#">buy</a></li>
+        <li class="mobile-list__item"><a class="list-link" href="#">title in the menu2</a></li>
+    </ul>
+</div>
 <div class="expactor">
     <div class="expactor__products">
         <div class="banner">
@@ -176,7 +218,37 @@
     </div>
     <div class="expactor__content">
         <div class="expactor__content-wrapper mobile">
-            
+            <div class="banner__inner">
+                <div class="description">
+                    <div class="container description__container">
+                        <h3 class="content__title">description</h3>
+                        <div class="content__decor-line"></div>
+                        <div class="description__wrapper">
+                            <p class="description__text  description__text_bold">IQUALIF software extracts data from the
+                                Yellow or White Pages and saves them in Excel format.</p>
+                            <ul class="description__list">
+                                <li class="description__item">FIQUALIF White and Yellow is used to extract individual
+                                    data and business contacts from the White and Yellow Pages directories of several
+                                    countries
+                                </li>
+                                <li class="description__item">This software is an essential tool to expand your market
+                                    prospects, giving you the possibility to create customer files, forms and
+                                    qualification files
+                                </li>
+                                <li class="description__item">This software enables you capture up to 40% more contacts
+                                    than competitors, and collect complete contact information.
+                                </li>
+                                <li class="description__item">The Yellow version records contacts' email addresses when
+                                    the information is available on the company's online Yellow Pages profile.
+                                </li>
+                                <li class="description__item">It then updates email addresses not found on the Yellow
+                                    Pages site directly from the websites of companies that have one.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -218,7 +290,8 @@
         </li>
         <li class="expactor__support-item">
             <img src="img/icon_9.png" class="expactor__support-item-logo">
-            <div class="expactor__support-item-description">Windows Server 2003 / 2008 R2 / 2012 R2, 32 or 64 bit</div>
+            <div class="expactor__support-item-description">Windows Server 2003 / 2008 R2 / 2012 R2, 32 or 64 bit
+            </div>
         </li>
     </ul>
 </div>
@@ -230,18 +303,22 @@
         <div class="description__wrapper">
             <div class="description__top">
                 <div class="description__part">
-                    <p class="description__text description__text_bold">Ideal for CALL CENTERS and CONTACT CENTERS</p>
-                    <p class="description__text description__text_bold">but also for traders, artisans and professionals
+                    <p class="description__text description__text_bold">Ideal for CALL CENTERS and CONTACT
+                        CENTERS</p>
+                    <p class="description__text description__text_bold">but also for traders, artisans and
+                        professionals
                         who want to
                         introduce or find new customers and expand their activity base,
                         What is IQUALIF? IQUALIF is a tool for ohtainig the full details of
                         city’s residents and can filter results by specific criteria</p>
-                    <p class="description__text">IQUALlF is usefull for all professionals and for lausiness such as call
+                    <p class="description__text">IQUALlF is usefull for all professionals and for lausiness such as
+                        call
                         centers
                         communications and advertising agencies all maixeting professionals and the
                         oiivate or public sector that wish to expand their activities or make
                         themselves known.</p>
-                    <p class="description__text">White scrapei versions extlact data from individual listings by title
+                    <p class="description__text">White scrapei versions extlact data from individual listings by
+                        title
                         name
                         address telephone numtaen aveiage age and collective or individual housing</p>
                     <p class="description__text">Vellow extractors allow companies to extlact lists by name address
@@ -252,7 +329,8 @@
                         the possibility to cieate customei ﬁlesu forms and qualiﬁcation files This
                         software enalales you capture up to 40% more contacts than competitors and
                         collect full contact details for prospective clients</p>
-                    <p class="description__text">IQUALlE specialises in capturing and extracting data from the Yellow oi
+                    <p class="description__text">IQUALlE specialises in capturing and extracting data from the
+                        Yellow oi
                         White Pages of several countries. Web scraping oi data mining can also tie
                         extended to other areas oi sites according to your lausiness needs</p>
                 </div>
@@ -260,7 +338,8 @@
                     <p class="description__text  description__text_bold">IQUALIF Contact page Extractor includes the
                         following features:</p>
                     <ul class="description__list">
-                        <li class="description__item">Fllidlrig contact information from the online versions of white
+                        <li class="description__item">Fllidlrig contact information from the online versions of
+                            white
                             Pages or
                             Yellow Pages directories of countiies including France Belgium Switzerland Canada alid
                             Polvnesla
@@ -289,7 +368,8 @@
             <div class="description__bottom">
                 <p class="description__text description__text_bold">OUR STRENGTHS:</p>
                 <p class="description__text description__text_bold">new customers will always have up-to-date
-                    information captured from ofﬁcial directories in real time. In addition, our solutions allow for the
+                    information captured from ofﬁcial directories in real time. In addition, our solutions allow for
+                    the
                     extraction of up to 20,000 sheets per houra Our aim s to provide customers with powerfuii Tools,
                     with a quality a step above those already on the market.</p>
             </div>
@@ -297,7 +377,23 @@
     </div>
 </div>
 <div class="expactor-wrap">
-    <div class="expactor__cont"></div>
+    <div class="expactor__cont">
+        <div class="container container_top mobile">
+            <div class="expactor__titles">
+                <h2 class="expactor__title">a new version</h2>
+                <div class="expactor__subtitle">of our Yellow and White pages extractor</div>
+            </div>
+            <div class="expactor__image"></div>
+            <div class="expactor__description-wrapper">
+                <p class="expactor__description">Simplified interface at an optimased for professional</p>
+                <p class="expactor__description">File Size: 57,4 MB (EXE) / 97,0 MB (PKG) /26,3 MB (ZIP)</p>
+                <p class="expactor__description">License: 3-day trial (the same as the commercial version, no
+                    restrictions except the time allocated)
+                </p>
+            </div>
+            <div class="expactor__subtitle">try our software FOR FREE:</div>
+        </div>
+    </div>
     <div class="expactor__prod">
         <div class="banner banner_bottom">
         </div>
@@ -309,29 +405,30 @@
                         <a href="#" class="expactor__product-link">Try for free
                             <span class="expactor__product-icon"></span>
                         </a>
-                        <a href="#" class="expactor__product-link expactor__product-link_bottom expactor__product-link">Buy
+                        <a href="#"
+                           class="expactor__product-link expactor__product-link_bottom expactor__product-link">Buy
                             <span class="expactor__product-icon expactor__product-icon_brown"></span>
                         </a>
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="expactor__product_right expactor__product_right-bottom">
             <div class="expactor__product-wrapper">
-            <div class="expactor__product-inner expactor__product-inner_right">
-                <h4 class="expactor__product-title expactor__product-title_bottom">White pages extractor</h4>
-                <div class="expactor__product-link-wrapper">
-                    <a href="#" class="expactor__product-link">Try for free
-                        <span class="expactor__product-icon"></span>
-                    </a>
-                    <a href="#" class="expactor__product-link expactor__product-link_brown expactor__product-link_bottom">Buy
-                        <span class="expactor__product-icon expactor__product-icon_yellow"></span>
-                    </a>
+                <div class="expactor__product-inner expactor__product-inner_right">
+                    <h4 class="expactor__product-title expactor__product-title_bottom">White pages extractor</h4>
+                    <div class="expactor__product-link-wrapper">
+                        <a href="#" class="expactor__product-link">Try for free
+                            <span class="expactor__product-icon"></span>
+                        </a>
+                        <a href="#"
+                           class="expactor__product-link expactor__product-link_brown expactor__product-link_bottom">Buy
+                            <span class="expactor__product-icon expactor__product-icon_yellow"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 </div>
@@ -365,26 +462,26 @@
     <div class="footer-links">
         <div class="container footer-links__container">
             <div class="footer-links__section">
-                <h4 class="footer-links__title">Categories</h4>
-                <ul class="footer-links__list">
+                <h4 class="footer-links__title js-footer-links-title">Categories <span class="footer-links__title-span">+</span> </h4>
+                <ul class="footer-links__list js-footer-links-list">
                     <li class="footer-links__item">
                         <a href="#" class="footer-links__link">Buy</a>
                     </li>
                 </ul>
             </div>
             <div class="footer-links__section">
-                <h4 class="footer-links__title">Information</h4>
-                <ul class="footer-links__list">
+                <h4 class="footer-links__title js-footer-links-title">Information <span class="footer-links__title-span">+</span> </h4>
+                <ul class="footer-links__list js-footer-links-list">
                     <% information.forEach((item) => { %>
-                    <li class="footer-links__item">
-                        <a href="#" class="footer-links__link"><%= item.title %></a>
-                    </li>
-                        <% }) %>
+                        <li class="footer-links__item">
+                            <a href="#" class="footer-links__link"><%= item.title %></a>
+                        </li>
+                    <% }) %>
                 </ul>
             </div>
             <div class="footer-links__section">
-                <h4 class="footer-links__title">My account</h4>
-                <ul class="footer-links__list">
+                <h4 class="footer-links__title js-footer-links-title">My account <span class="footer-links__title-span">+</span> </h4>
+                <ul class="footer-links__list js-footer-links-list">
                     <% account.forEach((item) => { %>
                         <li class="footer-links__item">
                             <a href="#" class="footer-links__link"><%= item.title %></a>
@@ -396,21 +493,23 @@
         </div>
     </div>
     <div class="copyright">
-    <div class="container copyright__container">
-        <a class="copyright__link" href="#" target="_blank"> © 2019 - Ecommerce software by Iqualif™ </a>
-    </div>
+        <div class="container copyright__container">
+            <a class="copyright__link" href="#" target="_blank"> © 2019 - Ecommerce software by Iqualif™ </a>
+        </div>
     </div>
 </footer>
-
 <button class="help">
     <span class="help__icon">
-        <svg width="20" height="20" viewBox="0 0 20 20"><title></title><g id="Layer_4"><path d="M11,12.3V13c0,0-1.8,0-2,0v-0.6c0-0.6,0.1-1.4,0.8-2.1c0.7-0.7,1.6-1.2,1.6-2.1c0-0.9-0.7-1.4-1.4-1.4 c-1.3,0-1.4,1.4-1.5,1.7H6.6C6.6,7.1,7.2,5,10,5c2.4,0,3.4,1.6,3.4,3C13.4,10.4,11,10.8,11,12.3z"></path><circle cx="10" cy="15" r="1"></circle><path d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2 M10,0C4.5,0,0,4.5,0,10s4.5,10,10,10s10-4.5,10-10S15.5,0,10,0 L10,0z"></path></g></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20"><title></title><g id="Layer_4"><path
+                        d="M11,12.3V13c0,0-1.8,0-2,0v-0.6c0-0.6,0.1-1.4,0.8-2.1c0.7-0.7,1.6-1.2,1.6-2.1c0-0.9-0.7-1.4-1.4-1.4 c-1.3,0-1.4,1.4-1.5,1.7H6.6C6.6,7.1,7.2,5,10,5c2.4,0,3.4,1.6,3.4,3C13.4,10.4,11,10.8,11,12.3z"></path><circle
+                        cx="10" cy="15" r="1"></circle><path
+                        d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2 M10,0C4.5,0,0,4.5,0,10s4.5,10,10,10s10-4.5,10-10S15.5,0,10,0 L10,0z"></path></g></svg>
     </span>
     <span class="help__text">Помощь</span>
 </button>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-    <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
