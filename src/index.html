@@ -14,65 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
-<% const currency = [
-    {title: 'Euro (EUR)', class: 'header__menu-link', value: 'EUR', link: '#'},
-    {title: 'Dollar (USD)', class: 'header__menu-link', value: 'USD', link: '#'},
-    {title: 'Rubble (RUB)', class: 'header__menu-link', value: 'RUB', link: '#'},
-    /* ... */
-]; %>
-<% const lang = [
-    {title: 'English', class: 'header__menu-link', link: '#'},
-    {title: 'Russian', class: 'header__menu-link', link: '#'},
-    {title: 'Français', class: 'header__menu-link', link: '#'},
-    /* ... */
-]; %>
-<% const menuItems = [
-    {title: 'privacy policy', link: '#'},
-    {title: 'terms of use', link: '#'},
-    {title: 'contact us', link: '#'},
-    {title: 'newsletter', link: '#'},
-    {title: 'sitemap', link: '#'}
-    /* ... */
-]; %>
-<% const listItems = [
-    {
-        title: 'EXTRACTION',
-        img: 'img/icon_1.png',
-        description: 'Extraction of full contact details, addiesses and phone numtaers'
-    },
-    {
-        title: 'COORDINATION',
-        img: 'img/icon_2.png',
-        description: 'Coordinate the extraction of data from the white Pages directory'
-    },
-    {title: 'AUTOMATIC', img: 'img/icon_3.png', description: 'Automatic enhalicement of the street list'},
-    {title: 'STREETS', img: 'img/icon_4.png', description: 'Use the list of streets provided oi impoit more'},
-    {title: 'CONTROL', img: 'img/icon_5.png', description: 'Pause and resume downloads'},
-    {title: 'UPDATES', img: 'img/icon_6.png', description: 'Automatic updates'},
-    {title: 'ANTIBLACKLIST', img: 'img/icon_7.png', description: 'Antiolackllst system'},
-    {title: 'CSV', img: 'img/icon_8.png', description: 'Export to SCV'},
-    /* ... */
-]; %>
-<% const information = [
-    {title: 'Specials', link: '#'},
-    {title: 'New products', link: '#'},
-    {title: 'Best sellers', link: '#'},
-    {title: 'Our stores', link: '#'},
-    {title: 'Contact us', link: '#'},
-    {title: 'EULA', link: '#'},
-    {title: 'General Terms And Conditions', link: '#'},
-    {title: 'About', link: '#'},
-    {title: 'Sitemap', link: '#'}
-    /* ... */
-]; %>
-<% const account = [
-    {title: 'My orders', link: '#'},
-    {title: 'My credit slips', link: '#'},
-    {title: 'My addresses', link: '#'},
-    {title: 'My personal info', link: '#'},
-    {title: 'My vouchers', link: '#'},
-    /* ... */
-]; %>
 <header class="header">
     <div class="header__menu-wrapper">
         <div class="container container_header">
@@ -82,24 +23,44 @@
                             class="header__menu-link header__menu-link_list js-header-menu-link-list js-header-menu-link-lang"
                             href="#">English</a>
                     <ul class="header__menu-sublist" style="display: none">
-                        <% lang.forEach((item) => { %>
-                            <li class="header__menu-sublist-item"><a href="#"
-                                                                     class="header__menu-sublist-link js-header-menu-sublist-lang"
-                                                                     data-lang="<%= item.title %>"><%= item.title %></a>
-                            </li>
-                        <% }) %>
+
+                        <li class="header__menu-sublist-item"><a href="#"
+                                                                 class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                                 data-lang="English">English</a>
+                        </li>
+
+                        <li class="header__menu-sublist-item"><a href="#"
+                                                                 class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                                 data-lang="Russian">Russian</a>
+                        </li>
+
+                        <li class="header__menu-sublist-item"><a href="#"
+                                                                 class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                                 data-lang="Français">Français</a>
+                        </li>
+
                     </ul>
                 </li>
                 <li class="header__menu-item header__menu-item_sublist"><a
                             class="header__menu-link header__menu-link_list js-header-menu-link-list" href="#">Currency:
                         <span class="js-header-menu-link-currency">EUR</span></a>
                     <ul class="header__menu-sublist" style="display: none">
-                        <% currency.forEach((item) => { %>
-                            <li class="header__menu-sublist-item"><a href="#"
-                                                                     class="header__menu-sublist-link js-header-menu-sublist-link"
-                                                                     data-currency="<%= item.value %>"><%= item.title %></a>
-                            </li>
-                        <% }) %>
+
+                        <li class="header__menu-sublist-item"><a href="#"
+                                                                 class="header__menu-sublist-link js-header-menu-sublist-link"
+                                                                 data-currency="EUR">Euro (EUR)</a>
+                        </li>
+
+                        <li class="header__menu-sublist-item"><a href="#"
+                                                                 class="header__menu-sublist-link js-header-menu-sublist-link"
+                                                                 data-currency="USD">Dollar (USD)</a>
+                        </li>
+
+                        <li class="header__menu-sublist-item"><a href="#"
+                                                                 class="header__menu-sublist-link js-header-menu-sublist-link"
+                                                                 data-currency="RUB">Rubble (RUB)</a>
+                        </li>
+
                     </ul>
                 </li>
                 <li class="header__menu-item"><a class="header__menu-link" href="#">Sing in</a></li>
@@ -108,9 +69,13 @@
     </div>
     <div class="container header__container">
         <ul class="mobile-menu" id="openMenu">
-            <% for(var i = 0; i < 3; i++) { %>
-                <li class="mobile-menu__item"></li>
-            <% } %>
+
+            <li class="mobile-menu__item"></li>
+
+            <li class="mobile-menu__item"></li>
+
+            <li class="mobile-menu__item"></li>
+
         </ul>
         <a href="#" class="logo"></a>
         <form class="search-form" name="search-form">
@@ -142,12 +107,22 @@
                     class="list-link header__menu-link_list js-header-menu-link-list js-header-menu-link-lang"
                     href="#">English</a>
             <ul class="header__menu-sublist" style="display: none">
-                <% lang.forEach((item) => { %>
-                    <li class="header__menu-sublist-item"><a href="#"
-                                                             class="header__menu-sublist-link js-header-menu-sublist-lang"
-                                                             data-lang="<%= item.title %>"><%= item.title %></a>
-                    </li>
-                <% }) %>
+
+                <li class="header__menu-sublist-item"><a href="#"
+                                                         class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                         data-lang="English">English</a>
+                </li>
+
+                <li class="header__menu-sublist-item"><a href="#"
+                                                         class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                         data-lang="Russian">Russian</a>
+                </li>
+
+                <li class="header__menu-sublist-item"><a href="#"
+                                                         class="header__menu-sublist-link js-header-menu-sublist-lang"
+                                                         data-lang="Français">Français</a>
+                </li>
+
             </ul>
         </li>
         <li class="mobile-list__item"><a class="list-link" href="#">Contact us</a></li>
@@ -155,12 +130,22 @@
                     class="list-link header__menu-link_list js-header-menu-link-list" href="#">Currency:
                 <span class="js-header-menu-link-currency">EUR</span></a>
             <ul class="header__menu-sublist" style="display: none">
-                <% currency.forEach((item) => { %>
-                    <li class="header__menu-sublist-item"><a href="#"
-                                                             class="header__menu-sublist-link  js-header-menu-sublist-link"
-                                                             data-currency="<%= item.value %>"><%= item.title %></a>
-                    </li>
-                <% }) %>
+
+                <li class="header__menu-sublist-item"><a href="#"
+                                                         class="header__menu-sublist-link  js-header-menu-sublist-link"
+                                                         data-currency="EUR">Euro (EUR)</a>
+                </li>
+
+                <li class="header__menu-sublist-item"><a href="#"
+                                                         class="header__menu-sublist-link  js-header-menu-sublist-link"
+                                                         data-currency="USD">Dollar (USD)</a>
+                </li>
+
+                <li class="header__menu-sublist-item"><a href="#"
+                                                         class="header__menu-sublist-link  js-header-menu-sublist-link"
+                                                         data-currency="RUB">Rubble (RUB)</a>
+                </li>
+
             </ul>
         </li>
         <li class="mobile-list__item"><a class="list-link" href="#">Sing in</a></li>
@@ -257,15 +242,71 @@
         <h3 class="content__title">features</h3>
         <div class="content__decor-line"></div>
         <ul class="content__list">
-            <% listItems.forEach((item) => { %>
-                <li class="content__item">
-                    <div class="content__item-inner">
-                        <img class="content__item-img" src="<%= item.img %>">
-                        <div class="content__item-name"><%= item.title %></div>
-                    </div>
-                    <div class="content__item-description"><%= item.description %></div>
-                </li>
-            <% }) %>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_1.png">
+                    <div class="content__item-name">EXTRACTION</div>
+                </div>
+                <div class="content__item-description">Extraction of full contact details, addiesses and phone numtaers</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_2.png">
+                    <div class="content__item-name">COORDINATION</div>
+                </div>
+                <div class="content__item-description">Coordinate the extraction of data from the white Pages directory</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_3.png">
+                    <div class="content__item-name">AUTOMATIC</div>
+                </div>
+                <div class="content__item-description">Automatic enhalicement of the street list</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_4.png">
+                    <div class="content__item-name">STREETS</div>
+                </div>
+                <div class="content__item-description">Use the list of streets provided oi impoit more</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_5.png">
+                    <div class="content__item-name">CONTROL</div>
+                </div>
+                <div class="content__item-description">Pause and resume downloads</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_6.png">
+                    <div class="content__item-name">UPDATES</div>
+                </div>
+                <div class="content__item-description">Automatic updates</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_7.png">
+                    <div class="content__item-name">ANTIBLACKLIST</div>
+                </div>
+                <div class="content__item-description">Antiolackllst system</div>
+            </li>
+
+            <li class="content__item">
+                <div class="content__item-inner">
+                    <img class="content__item-img" src="img/icon_8.png">
+                    <div class="content__item-name">CSV</div>
+                </div>
+                <div class="content__item-description">Export to SCV</div>
+            </li>
+
 
         </ul>
     </div>
@@ -472,21 +513,69 @@
             <div class="footer-links__section">
                 <h4 class="footer-links__title js-footer-links-title">Information <span class="footer-links__title-span">+</span> </h4>
                 <ul class="footer-links__list js-footer-links-list">
-                    <% information.forEach((item) => { %>
-                        <li class="footer-links__item">
-                            <a href="#" class="footer-links__link"><%= item.title %></a>
-                        </li>
-                    <% }) %>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">Specials</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">New products</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">Best sellers</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">Our stores</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">Contact us</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">EULA</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">General Terms And Conditions</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">About</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">Sitemap</a>
+                    </li>
+
                 </ul>
             </div>
             <div class="footer-links__section">
                 <h4 class="footer-links__title js-footer-links-title">My account <span class="footer-links__title-span">+</span> </h4>
                 <ul class="footer-links__list js-footer-links-list">
-                    <% account.forEach((item) => { %>
-                        <li class="footer-links__item">
-                            <a href="#" class="footer-links__link"><%= item.title %></a>
-                        </li>
-                    <% }) %>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">My orders</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">My credit slips</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">My addresses</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">My personal info</a>
+                    </li>
+
+                    <li class="footer-links__item">
+                        <a href="#" class="footer-links__link">My vouchers</a>
+                    </li>
+
                 </ul>
             </div>
 
