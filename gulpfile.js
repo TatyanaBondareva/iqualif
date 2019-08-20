@@ -6,31 +6,36 @@ const rename = require('gulp-rename');
 const ejs = require('gulp-ejs');
 const gutil = require('gulp-util');
 
-browserSync.create();
+// Автоперезагрузка при изменении файлов в папке `dist`:
+// Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
+// Это таск нужен только при локальной разработке.
+gulp.task('livereload', () => {
+    browserSync.create();
 
-browserSync.init({
-    server: {
-        baseDir: 'dist'
-    },
-    files: [
-        'dist/**/*.*'
-    ]
+    browserSync.init({
+        server: {
+            baseDir: 'dist'
+        },
+        files: [
+            'dist/**/*.*'
+        ]
+    });
 });
 
 gulp.task('styles', () => {
-    gulp.src('src/less/main.less')
+    return gulp.src('src/less/main.less')
         .pipe(less())
         .pipe(autoprefixer())
         .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('img', () => {
-    gulp.src('src/img/**/*.*')
+    return gulp.src('src/img/**/*.*')
         .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('js', () => {
-    gulp.src('src/js/**/*.*')
+    return gulp.src('src/js/**/*.*')
         .pipe(gulp.dest('./dist/js'));
 });
 
@@ -41,9 +46,13 @@ gulp.task('html', () => {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.watch('src/less/**/*.less', ['styles']);
-gulp.watch('src/**/*.ejs', ['html']);
-gulp.watch('src/img/**/*.*', ['img']);
-gulp.watch('src/js/**/*.*', ['js']);
+// Отслеживание изменений в файлах, нужно только при локальной разработке
+gulp.task('watch', () => {
+    gulp.watch('src/less/**/*.less', gulp.parallel('styles'));
+    gulp.watch('src/**/*.html', gulp.parallel('html'));
+    gulp.watch('src/img/**/*.*', gulp.parallel('img'));
+    gulp.watch('src/js/**/*.*', gulp.parallel('js'));
+});
 
-gulp.task('default', ['styles', 'html', 'img', 'js']);
+gulp.task('default', gulp.parallel('styles', 'html', 'img', 'js', 'livereload', 'watch'));
+gulp.task('prod', gulp.parallel('styles', 'html', 'img', 'js'));
