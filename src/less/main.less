@@ -32,7 +32,7 @@ body {
             justify-content: space-around;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1110px) {
             justify-content: space-evenly;
         }
 
@@ -71,4 +71,52 @@ body {
     @media (max-width: 768px) {
         display: flex;
     }
+}
+
+.support-form {
+    position: fixed;
+    bottom: 68px;
+    background-color: #f6f6f6;
+    right: 20px;
+    padding: 20px;
+    border-top: 35px solid #252525;
+    border-radius: 10px;
+    z-index: 5;
+    display: none;
+
+    @media (max-width: 360px) {
+        right: 5px;
+    }
+
+    &__field-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        padding: 10px 5px;
+        width: 251px;
+    }
+
+    &__label {
+        margin-bottom: 5px;
+    }
+
+    &__button {
+        border: none;
+        border-radius: 10px;
+        background-color: #777777;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 20px;
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+
+._brown {
+    color: #333333;
 }

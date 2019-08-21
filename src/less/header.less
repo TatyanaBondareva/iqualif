@@ -94,10 +94,12 @@
   }
 
   &__container {
+    @media (max-width: 1000px) {
+      justify-content: space-between;
+    }
     @media (max-width: 768px) {
       flex-wrap: wrap;
       padding: 20px;
-      justify-content: space-between;
     }
   }
 
@@ -120,6 +122,11 @@
   margin-right: 35px;
   background-image: url(../img/logo.png);
   background-size: 100%;
+  background-repeat: no-repeat;
+
+  @media (max-width: 1000px) {
+    width: 300px;
+  }
 
   @media (max-width: 768px) {
     width: 262px;
@@ -144,6 +151,10 @@
   border: 1px solid #e6e6e6;
   margin-right: 124px;
 
+  @media (max-width: 1141px) {
+    margin-right: 50px;
+  }
+
   @media (max-width: 1024px) {
     margin-right: 62px;
   }
@@ -162,6 +173,9 @@
     box-shadow: none;
     -webkit-appearance: none;
 
+    @media (max-width: 1050px) {
+      width: 200px;
+    }
     @media (max-width: 768px) {
       flex: 1;
     }

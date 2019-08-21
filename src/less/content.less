@@ -276,6 +276,14 @@
 		right: 55px;
 		text-align: right;
 
+		@media (max-width: 1400px) {
+			bottom: 60px;
+		}
+
+		@media (max-width: 880px) {
+			right: 5px;
+		}
+
 		&_bottom {
 			bottom: 65px;
 		}
@@ -284,10 +292,10 @@
 			left: 55px;
 			right: auto;
 			text-align: left;
-		}
 
-		@media (max-width: 1400px) {
-			bottom: 60px;
+			@media (max-width: 880px) {
+				left: 5px;
+			}
 		}
 
 		@media (max-width: 768px) {
@@ -846,6 +854,10 @@
 
 	@media (max-width: 1400px) {
 		bottom: 60px;
+	}
+
+	@media (max-width: 880px) {
+		left: 5px;
 	}
 
 	@media (max-width: 768px) {
