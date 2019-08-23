@@ -847,8 +847,10 @@
   &__content {
     display: flex;
     width: 80%;
+
     @media (max-width: 768px) {
       flex-direction: column;
+      width: 100%;
     }
   }
 
@@ -859,7 +861,13 @@
     @media (max-width: 768px) {
       margin: 21px 0;
     }
+
+    @media (max-width: 375px) {
+      width: 300px;
+      height: 200px;
+    }
   }
+
 	&__wrapper {
 		padding-top: 50px;
         z-index: 4;
@@ -871,6 +879,8 @@
       @media (max-width: 768px) {
         padding-top: 10px;
       }
+
+
 	}
 
 	&__top {
