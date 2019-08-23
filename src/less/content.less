@@ -34,6 +34,10 @@
 	&_long {
 		height: 315px;
 		align-items: center;
+
+		@media (max-width: 768px) {
+			margin-top: -1px;
+		}
 	}
 
 	&__inner {
@@ -439,8 +443,9 @@
 			padding: 15px 16px 12px;
 		}
 
-		@media (max-width: 720px)  {
-			padding: 10px 10px 5px;
+		@media (max-width: 720px) and (min-width: 577px)  {
+          padding: 13px 13px 5px;
+          font-size: 13px;
 		}
 
 		@media (max-width: 576px) {
@@ -466,7 +471,7 @@
 			padding: 15px 50px 12px;
 
 			@media (max-width: 768px) {
-				padding: 15px 41px 12px;
+				padding: 15px 38px 12px;
 			}
 
 			@media (max-width: 667px) and (min-width: 480px){

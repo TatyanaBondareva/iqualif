@@ -10,7 +10,6 @@ body {
     margin: 0;
     font-family: 'Lato';
     overflow-x: hidden;
-    left: 0;
 }
 
 .container {
@@ -37,11 +36,14 @@ body {
             justify-content: space-evenly;
         }
 
+        @media (max-width: 850px) {
+            justify-content: center;
+        }
+
         @media (max-width: 768px) {
             position: static;
             flex-wrap: wrap;
             margin-bottom: 28px;
-            justify-content: center;
         }
     }
 
